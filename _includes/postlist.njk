@@ -1,0 +1,10 @@
+<ul>
+{%- for blog in collections.posts | desc -%}
+    <li>
+      <h2><a href="{{ blog.url | url }}">{{ blog.data.post_title }}</a></h2>
+      <img src="{{ blog.data.postImage }}" alt="{{ blog.data.post_title }}">
+      <p>{{ blog.data.description }}</p>
+    </li>
+{%- endfor -%}
+</ul>
+
