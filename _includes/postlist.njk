@@ -1,9 +1,9 @@
 <ul>
-{%- for blog in collections.posts | desc -%}
+{%- for blog in collections.posts | animal -%}
     <li>
       <h2><a href="{{ blog.url | url }}">{{ blog.data.post_title }}</a></h2>
       <img src="{{ blog.data.postImage }}" alt="{{ blog.data.post_title }}">
-      <p>{{ blog.data.description }}</p>
+      <p>{{ blog.data.summary }}</p>
     </li>
 {%- endfor -%}
 </ul>
