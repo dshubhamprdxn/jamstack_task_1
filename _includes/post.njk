@@ -3,4 +3,11 @@ layout: mylayout.njk
 ---
 <h2>{{ post_title }}</h2>
 <img src="{{ postImage | url }}" alt="{{ post_title }}"></img>
+<h3>Tag :
+    {% if tags[1] === "animals" %}
+        <a href="/tags/animals/">Animals</a>
+    {% else %}
+        <a href="/tags/nature/">Nature</a>
+    {% endif %}
+</h3>
 <p>{{ description }}</p>

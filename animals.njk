@@ -1,10 +1,21 @@
+---
+layout: mylayout.njk
+
+permalink: /tags/animals/
+---
+
 <ul>
-{%- for blog in collections.posts -%}
+{% set animals = collections.animals %}
+{%- for blog in animals -%}
+  {% if blog.data.tags[1] === "animals" %}
     <li>
       <h2><a href="{{ blog.url | url }}">{{ blog.data.post_title }}</a></h2>
       <img src="{{ blog.data.postImage }}" alt="{{ blog.data.post_title }}">
       <p>{{ blog.data.summary }}</p>
     </li>
+  {% endif %}
 {%- endfor -%}
 </ul>
+
+
 
